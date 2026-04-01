@@ -1,5 +1,4 @@
-````markdown
-# Q-Sec: Hybrid Quantum-Classical Cryptography
+# 🛡️ Q-Sec: Hybrid Quantum-Classical Cryptography
 
 ### Reinforcement Learning Enhanced Security Dashboard
 
@@ -9,9 +8,9 @@ This repository contains the multi-layered architecture for the **Hybrid Quantum
 
 ## 📂 Project Structure
 
-- **/qsec-rl-engine**: Python environment containing the Actor-Critic Reinforcement Learning model (`main.py`).
-- **/supabase/functions/message-crypto**: Deno Edge Functions handling the cryptographic logic (`index.ts`).
-- **/src**: React/Vite frontend dashboard for real-time visualization.
+- **`/qsec-rl-engine`**: Python environment with the Actor-Critic RL model (`main.py`).
+- **`/supabase/functions/message-crypto`**: Deno Edge Functions for crypto logic (`index.ts`).
+- **`/src`**: React/Vite frontend dashboard for real-time visualization.
 
 ---
 
@@ -21,43 +20,27 @@ Follow these steps in order to get the full system running on your MacBook.
 
 ### 1. The RL Engine (Python)
 
-Run the "brain" of the project to start the Actor-Critic weight calculations.
-
-```bash
-cd ~/Desktop/sechat/sechat/qsec-rl-engine
-# Activate your virtual environment
-source venv/bin/activate
-# Run the engine
-python3 main.py
-```
-````
+Run the "brain" to start the Actor-Critic weight calculations.
+**Command:** `cd ~/Desktop/sechat/sechat/qsec-rl-engine && source venv/bin/activate && python3 main.py`
 
 ### 2. The Crypto Backend (Deno)
 
-Run the secure message-processing layer. Note: The entry point is `index.ts`.
+Run the secure message-processing layer.
+**Command:** `cd ~/Desktop/sechat/sechat/supabase/functions/message-crypto && deno run --allow-net --allow-read index.ts`
 
-```bash
-cd ~/Desktop/sechat/sechat/supabase/functions/message-crypto
-deno run --allow-net --allow-read index.ts
-```
-
-- **Local Endpoint:** `http://localhost:8888/`
+- **Local Endpoint:** http://localhost:8888/
 
 ### 3. The Frontend Dashboard (NPM)
 
-Launch the Vite development server to view the UI.
-
-```bash
-cd ~/Desktop/sechat/sechat
-npm run dev
-```
+Launch the Vite development server to view the UI. **Run this from the root folder.**
+**Command:** `cd ~/Desktop/sechat/sechat && npm run dev`
 
 ---
 
 ## 🛠 Troubleshooting & Notes
 
-- **Pathing:** Always ensure you are in the root `sechat` folder before running `npm run dev` to avoid alias errors (`@/components`).
-- **File Names:** Use `index.ts` for the Deno function; `main.ts` was deprecated/moved.
-- **Port 8888:** If the Deno server fails to start, ensure no other process is using port 8888.
+- **Pathing:** Always run `npm run dev` from the `sechat/sechat` folder. Running it from inside `src` will cause `@/components` import errors.
+- **Deno File:** Use `index.ts`. Your logs confirmed `main.ts` does not exist in this directory.
+- **Typo Alert:** If you get "No such directory," check if you typed `scchat` instead of `sechat`.
 
 ---
