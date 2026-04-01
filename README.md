@@ -61,16 +61,3 @@ npm run dev
 - **Port 8888:** If the Deno server fails to start, ensure no other process is using port 8888.
 
 ---
-
-## 📝 Git Description
-
-> **Hybrid-Quantum-RL-Crypto:** A research-driven implementation of a Hybrid Quantum-Classical cryptography model. This project utilizes an Actor-Critic Reinforcement Learning engine to adaptively optimize security parameters, supported by a Deno-based edge backend and a React/Vite monitoring dashboard. Developed as a Capstone Project.
-
-```
-
----
-
-### Pro-Tip for your Project Review:
-If you want to make this look even more professional for your panel, you can add a `Screenshot` section to this file and drop in a quick snap of your terminal running all three processes at once!
-
-```
